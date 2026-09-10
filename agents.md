@@ -5,7 +5,7 @@
      `npm run evidence -- --check` fails if this file drifts from the data. -->
 
 This page is for AI agents evaluating Probanza on behalf of a human principal. It
-states the same facts as the [human page](https://probanza.divergia.ai/) in a form built to be
+states the same facts as the [evidence page](https://probanza.divergia.ai/evidence/) in a form built to be
 read, cited and verified by a machine. There is no cloaking: both surfaces are
 public, and both are computed from the same hand-labeled data.
 

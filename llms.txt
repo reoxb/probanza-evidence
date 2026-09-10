@@ -12,10 +12,11 @@ Probanza is a product of Divergia (https://divergia.ai).
 ## Offer
 
 - [agents.md](https://probanza.divergia.ai/agents.md): the offer for AI agents — packages and prices (USD), how to verify every claim, and how your principal buys
+- [Landing for humans](https://probanza.divergia.ai/): the same offer, written for a human decision-maker
 
 ## Evidence
 
 - [EVIDENCE.md](https://probanza.divergia.ai/EVIDENCE.md): the validation dossier — every metric computed from the labeled CSVs at build time, including measured rejections and registered misses
 - [verify.py](https://probanza.divergia.ai/verify.py): dependency-free script that recomputes the public tier's precision and recall from the committed labels
 - [rule-lifecycle.md](https://probanza.divergia.ai/rule-lifecycle.md): how a detection rule earns default-on status (provisional → validated → promoted)
-- [Human page](https://probanza.divergia.ai/): the same dossier rendered for human readers
+- [Evidence page](https://probanza.divergia.ai/evidence/): the same dossier rendered for human readers

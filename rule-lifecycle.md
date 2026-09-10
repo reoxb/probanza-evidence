@@ -54,8 +54,9 @@ never implied. See [support-matrix](support-matrix.md).
 
 ## Publishing the evidence
 
-The public dossier lives at **https://probanza.divergia.ai/**, served by GitHub
-Pages (custom domain) from the `reoxb/probanza-evidence` repo. That repo is a **published snapshot**, not a
+The public dossier lives at **https://probanza.divergia.ai/evidence/**, served by GitHub
+Pages (custom domain) from the `reoxb/probanza-evidence` repo; the site root is the sales
+landing for decision-makers, generated from the same dossier (record 2026-09-10a). That repo is a **published snapshot**, not a
 source: every file in it is a copy of a generated or committed artifact from this repo.
 
 Publishing was once a manual copy, and it froze — the page drifted five arcs behind main,
