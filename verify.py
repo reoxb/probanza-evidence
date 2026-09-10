@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Recompute every number in the LUMEN validation dossier, from the labeled data.
+Recompute every number in the Probanza validation dossier, from the labeled data.
 
 The dossier asks you not to trust it. This is how you don't: this script reads
 the hand-labeled CSVs in this repository and prints the precision and recall
@@ -85,7 +85,7 @@ def main() -> int:
                     current_prec[rule] = c["tp"] / (c["tp"] + c["fp"])
 
     print()
-    print("  LUMEN — validation evidence, recomputed from the labeled CSVs")
+    print("  Probanza — validation evidence, recomputed from the labeled CSVs")
     print(f"  {total_rows} hand-labeled findings")
     print()
     print(f"  {'RULE':<40}{'TP':>6}{'FP':>5}{'FN':>5}{'PRECISION':>16}{'RECALL':>9}  RECORD")

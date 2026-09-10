@@ -1,8 +1,8 @@
 # Rule Lifecycle
 
 This document applies the portable doctrine —
-[change classification gate](lumen-agentic-framework/change-classification-gate.md)
-and [release discipline](lumen-agentic-framework/release-discipline.md) — to
+[change classification gate](probanza-agentic-framework/change-classification-gate.md)
+and [release discipline](probanza-agentic-framework/release-discipline.md) — to
 this project's own product surface: detection rules and governance policies.
 
 The auditor's official outputs are findings. Rule and policy changes are
@@ -54,8 +54,8 @@ never implied. See [support-matrix](support-matrix.md).
 
 ## Publishing the evidence
 
-The public dossier lives at **https://reoxb.github.io/lumen-evidence/**, served by GitHub
-Pages from the `reoxb/lumen-evidence` repo. That repo is a **published snapshot**, not a
+The public dossier lives at **https://probanza.divergia.ai/**, served by GitHub
+Pages (custom domain) from the `reoxb/probanza-evidence` repo. That repo is a **published snapshot**, not a
 source: every file in it is a copy of a generated or committed artifact from this repo.
 
 Publishing was once a manual copy, and it froze — the page drifted five arcs behind main,
@@ -108,7 +108,7 @@ proposed → provisional → validated → default-on
   registry version used.
 - **Default-on** — promoted only from validated. Promotion is a versioned
   policy change (bump the rule registry version; follow
-  [policy-change-template](lumen-agentic-framework/policy-change-template.md)).
+  [policy-change-template](probanza-agentic-framework/policy-change-template.md)).
 - **Retired** — a rule whose measured precision stays unacceptable, or
   whose detection surface is superseded, is removed or demoted; findings
   produced under it remain interpretable via version metadata.

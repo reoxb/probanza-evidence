@@ -1,4 +1,4 @@
-# LUMEN — Validation Evidence
+# Probanza — Validation Evidence
 
 <!-- GENERATED FILE — DO NOT EDIT BY HAND.
      Produced by `npm run evidence` from the labeled CSVs under docs/validation/.
@@ -13,38 +13,38 @@ Dossier version **1.1.0** · **3823** hand-labeled findings · **20** real produ
 
 ## What this is
 
-LUMEN is a static auditor for AI systems. This document is its evidence base: what
+Probanza is a static auditor for AI systems. This document is its evidence base: what
 it detects, how well, on what, and — as importantly — **what it deliberately does
 not claim**. Everything here is reproducible from a clean checkout.
 
 ## In plain terms
 
-An AI system fails in ways ordinary code review does not catch. LUMEN reads a
+An AI system fails in ways ordinary code review does not catch. Probanza reads a
 codebase and finds those places **before they ship**. It is a static auditor: it
 finds the exposure, it does not stop an attack — and every count below is what it
 found in **real, shipping open-source products**, hand-labeled one by one.
 
 ### It can be steered by the content it reads
 
-If your assistant summarizes a web page, a support ticket, or an uploaded document, whoever wrote that text can hide instructions inside it. LUMEN finds the places where outside text reaches the model's own instructions with nothing separating the two — the boundary that stops a retrieved document from talking to your agent as if it were you.
+If your assistant summarizes a web page, a support ticket, or an uploaded document, whoever wrote that text can hide instructions inside it. Probanza finds the places where outside text reaches the model's own instructions with nothing separating the two — the boundary that stops a retrieved document from talking to your agent as if it were you.
 
 **Found 28** across **6** real products. Measured by `PROMPT_INJECTION_UNTRUSTED_BLENDING`, `PROMPT_INJECTION_SECRECY_POLICY`, `PROMPT_INJECTION_CROSSFILE_BLENDING` — precision **1.000**.
 
 ### Its answers are trusted without being checked
 
-A model's output flows onward into a database write, a workflow, another API call — with nothing verifying it is even the right shape. LUMEN finds those unguarded hand-offs: the model calls and prompts whose result no schema, validator, or parser ever inspects.
+A model's output flows onward into a database write, a workflow, another API call — with nothing verifying it is even the right shape. Probanza finds those unguarded hand-offs: the model calls and prompts whose result no schema, validator, or parser ever inspects.
 
 **Found 1254** across **11** real products. Measured by `AI_MODEL_CALL_WITHOUT_VALIDATOR`, `PROMPT_MISSING_STRUCTURED_OUTPUT`, `AI_PROMPT_WITHOUT_VALIDATOR` — precision **0.991**.
 
 ### Business decisions are hiding inside prompts
 
-Pricing thresholds, eligibility rules and scoring formulas written into a prompt are decided by a language model — differently each time, with no audit trail, and invisible to the tests that cover your code. LUMEN finds the rules that drifted out of your codebase and into English.
+Pricing thresholds, eligibility rules and scoring formulas written into a prompt are decided by a language model — differently each time, with no audit trail, and invisible to the tests that cover your code. Probanza finds the rules that drifted out of your codebase and into English.
 
 **Found 6** across **4** real products. Measured by `PROMPT_CONTAINS_DETERMINISTIC_FORMULA` — precision **1.000**.
 
 ### Ordinary exposure, ranked by what it actually costs you
 
-Hardcoded credentials, unsafe evaluation, shell execution — the familiar risks, with the familiar problem: a scanner that shouts about every one of them trains your team to ignore all of them. LUMEN detects each, then classifies what kind it is, so a key your vendor publishes on purpose never arrives wearing the same red as a leaked one.
+Hardcoded credentials, unsafe evaluation, shell execution — the familiar risks, with the familiar problem: a scanner that shouts about every one of them trains your team to ignore all of them. Probanza detects each, then classifies what kind it is, so a key your vendor publishes on purpose never arrives wearing the same red as a leaked one.
 
 **Found 58** across **3** real products. Measured by `HARDCODED_CREDENTIALS`, `UNSAFE_EVAL_USAGE`, `SHELL_EXECUTION` — precision **1.000**.
 
@@ -293,7 +293,7 @@ inputs = f"Context: {context_str}\n\nQuestion: {input_text}\n\nAnswer:"
 
 **What it is.** Retrieved Wikipedia paragraphs — content the system did not write — are pasted straight into a prompt instruction with no boundary between them and the question. It is the same shape as the 24 sites the rule does catch.
 
-**Why LUMEN misses it.** The rule fires on external content only when it can PROVE the content is external: a real fetch, a scrape, a retriever call, a document field, or a prompt that declares its own source. Here the text arrives from a dataset dictionary — `problem["context"]` — and the file makes no external call at all. The provenance gate, which is the thing holding this rule's precision at 1.000, has nothing to grab.
+**Why Probanza misses it.** The rule fires on external content only when it can PROVE the content is external: a real fetch, a scrape, a retriever call, a document field, or a prompt that declares its own source. Here the text arrives from a dataset dictionary — `problem["context"]` — and the file makes no external call at all. The provenance gate, which is the thing holding this rule's precision at 1.000, has nothing to grab.
 
 **Why it is still open.** We built the fix and measured it. Treating a `["context"]` subscript as ingestion closed this miss — and RESURRECTED the false positive that the previous arc had just paid to close, because it laundered a weak signal through the gate that trusts genuine ingestion. So the fix was rejected and the miss stays registered. It is not a limitation we suffer; it is a trade we chose, with the numbers in front of us: one known miss beats one unknown false alarm.
 
@@ -340,7 +340,7 @@ nothing; handing the differentiated part to anonymous readers is a disclosure
 decision, and we made it the way this project makes every decision — recorded, with
 the trade named (decision 004). An evaluator with a name gets everything.
 
-**Evaluating LUMEN?** [Request the evaluator bundle](https://github.com/reoxb/lumen-evidence/issues) — say who
+**Evaluating Probanza?** [Request the evaluator bundle](https://github.com/reoxb/probanza-evidence/issues) — say who
 you are and what you are evaluating.
 
 ## Check it yourself
@@ -356,8 +356,8 @@ false negative by hand — is committed as CSV beside the dated record that prod
 script reads those CSVs and prints their table rows from scratch:
 
 ```bash
-git clone https://github.com/reoxb/lumen-evidence
-cd lumen-evidence
+git clone https://github.com/reoxb/probanza-evidence
+cd probanza-evidence
 python3 verify.py          # recomputes the public tier's precision and recall from the labels
 ```
 
@@ -375,7 +375,7 @@ you would fetch.
 
 ## The engine is the product. Its homework is licensed reading.
 
-LUMEN's detection engine is commercial and its source is closed, so **no, you cannot
+Probanza's detection engine is commercial and its source is closed, so **no, you cannot
 run it from this repository.** That is the trade — stated in one sentence, rather than
 buried in a footnote.
 
@@ -390,5 +390,5 @@ is the only one we intend to make.
 
 **Want to see what it finds in your codebase?** Concierge audits are open — bring a
 repository; you get the findings and the evidence behind each one, including the ones
-we get wrong. [Get your repo audited](mailto:suarzs@gmail.com?subject=LUMEN%20audit%20request).
+we get wrong. [Get your repo audited](mailto:contact@divergia.ai?subject=Probanza%20audit%20request).
 

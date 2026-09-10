@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<title>LUMEN — Validation Evidence</title>
+<title>Probanza — Validation Evidence</title>
 <meta name="description" content="Measured precision and recall for a static AI-system auditor across 20 real open-source products — generated from hand-labeled data, including the doctrines we measured and refused to ship.">
 <style>
 :root{
@@ -225,7 +225,7 @@ pre code{background:none;padding:0;font-size:12.5px;line-height:1.75;}
 <body>
 <div class="wrap">
 <header class="mast">
-  <h1>LUMEN — Validation Evidence</h1>
+  <h1>Probanza — Validation Evidence</h1>
   <p class="sub">A static auditor for AI systems. What it detects, how well, on what — and what it deliberately does not claim.</p>
   <span class="stamp">Generated from labeled data · drift fails the build</span>
   <div class="figs">
@@ -238,31 +238,31 @@ pre code{background:none;padding:0;font-size:12.5px;line-height:1.75;}
 <section class="sec">
   <div class="sec-head"><h2>In plain terms</h2><span class="rec">what it finds, and why it matters</span></div>
   <div class="prose">
-    <p>An AI system fails in ways ordinary code review does not catch. LUMEN reads a codebase and finds those places <strong>before they ship</strong>.</p>
+    <p>An AI system fails in ways ordinary code review does not catch. Probanza reads a codebase and finds those places <strong>before they ship</strong>.</p>
     <p>It is a <em>static auditor</em>: it finds the exposure, it does not stop an attack. Every count below is what it found in <strong>real, shipping open-source products</strong> — hand-labeled, one finding at a time.</p>
   </div>
 <div class="risk">
   <h4>It can be steered by the content it reads</h4>
   <span class="risk-n">28<small>found</small></span>
-  <p class="risk-b">If your assistant summarizes a web page, a support ticket, or an uploaded document, whoever wrote that text can hide instructions inside it. LUMEN finds the places where outside text reaches the model's own instructions with nothing separating the two — the boundary that stops a retrieved document from talking to your agent as if it were you.</p>
+  <p class="risk-b">If your assistant summarizes a web page, a support ticket, or an uploaded document, whoever wrote that text can hide instructions inside it. Probanza finds the places where outside text reaches the model's own instructions with nothing separating the two — the boundary that stops a retrieved document from talking to your agent as if it were you.</p>
   <p class="risk-m">Found across <b>6</b> real products. Measured by PROMPT_INJECTION_UNTRUSTED_BLENDING · PROMPT_INJECTION_SECRECY_POLICY · PROMPT_INJECTION_CROSSFILE_BLENDING — precision <b>1.000</b>.</p>
 </div>
 <div class="risk">
   <h4>Its answers are trusted without being checked</h4>
   <span class="risk-n">1254<small>found</small></span>
-  <p class="risk-b">A model's output flows onward into a database write, a workflow, another API call — with nothing verifying it is even the right shape. LUMEN finds those unguarded hand-offs: the model calls and prompts whose result no schema, validator, or parser ever inspects.</p>
+  <p class="risk-b">A model's output flows onward into a database write, a workflow, another API call — with nothing verifying it is even the right shape. Probanza finds those unguarded hand-offs: the model calls and prompts whose result no schema, validator, or parser ever inspects.</p>
   <p class="risk-m">Found across <b>11</b> real products. Measured by AI_MODEL_CALL_WITHOUT_VALIDATOR · PROMPT_MISSING_STRUCTURED_OUTPUT · AI_PROMPT_WITHOUT_VALIDATOR — precision <b>0.991</b>.</p>
 </div>
 <div class="risk">
   <h4>Business decisions are hiding inside prompts</h4>
   <span class="risk-n">6<small>found</small></span>
-  <p class="risk-b">Pricing thresholds, eligibility rules and scoring formulas written into a prompt are decided by a language model — differently each time, with no audit trail, and invisible to the tests that cover your code. LUMEN finds the rules that drifted out of your codebase and into English.</p>
+  <p class="risk-b">Pricing thresholds, eligibility rules and scoring formulas written into a prompt are decided by a language model — differently each time, with no audit trail, and invisible to the tests that cover your code. Probanza finds the rules that drifted out of your codebase and into English.</p>
   <p class="risk-m">Found across <b>4</b> real products. Measured by PROMPT_CONTAINS_DETERMINISTIC_FORMULA — precision <b>1.000</b>.</p>
 </div>
 <div class="risk">
   <h4>Ordinary exposure, ranked by what it actually costs you</h4>
   <span class="risk-n">58<small>found</small></span>
-  <p class="risk-b">Hardcoded credentials, unsafe evaluation, shell execution — the familiar risks, with the familiar problem: a scanner that shouts about every one of them trains your team to ignore all of them. LUMEN detects each, then classifies what kind it is, so a key your vendor publishes on purpose never arrives wearing the same red as a leaked one.</p>
+  <p class="risk-b">Hardcoded credentials, unsafe evaluation, shell execution — the familiar risks, with the familiar problem: a scanner that shouts about every one of them trains your team to ignore all of them. Probanza detects each, then classifies what kind it is, so a key your vendor publishes on purpose never arrives wearing the same red as a leaked one.</p>
   <p class="risk-m">Found across <b>3</b> real products. Measured by HARDCODED_CREDENTIALS · UNSAFE_EVAL_USAGE · SHELL_EXECUTION — precision <b>1.000</b>. Of the 17 credentials it found across these products, 0 are security incidents.</p>
 </div>
 <h3>Reading the numbers</h3>
@@ -306,7 +306,7 @@ pre code{background:none;padding:0;font-size:12.5px;line-height:1.75;}
   <td class="num">1200</td><td class="num">9</td><td class="num">4</td>
   <td><span class="mix" role="img" aria-label="1200 true positives, 9 false positives, 4 false negatives"><i class="m-tp" style="flex:1200"></i><i class="m-fp" style="flex:9"></i><i class="m-fn" style="flex:4"></i></span></td>
   <td class="num"><span class="val">0.993</span></td><td class="num">0.997</td><td class="num">1213</td>
-  <td class="rec"><a href="https://github.com/reoxb/lumen-evidence/blob/main/validation/2026-07-14u/VALIDATION_RECORD.md">2026-07-14u</a></td>
+  <td class="rec"><a href="https://github.com/reoxb/probanza-evidence/blob/main/validation/2026-07-14u/VALIDATION_RECORD.md">2026-07-14u</a></td>
 </tr>
 <tr>
   <td class="rule-id">AI_PROMPT_WITHOUT_VALIDATOR</td>
@@ -320,14 +320,14 @@ pre code{background:none;padding:0;font-size:12.5px;line-height:1.75;}
   <td class="num">17</td><td class="num">53</td><td class="num">0</td>
   <td><span class="mix" role="img" aria-label="17 true positives, 53 false positives, 0 false negatives"><i class="m-tp" style="flex:17"></i><i class="m-fp" style="flex:53"></i><i class="m-fn" style="flex:0"></i></span></td>
   <td class="num"><span class="was">0.243</span><span class="arrow">→</span><span class="val">1.000</span></td><td class="num">1.000</td><td class="num">70</td>
-  <td class="rec"><a href="https://github.com/reoxb/lumen-evidence/blob/main/validation/2026-07-12c/VALIDATION_RECORD.md">2026-07-12c</a></td>
+  <td class="rec"><a href="https://github.com/reoxb/probanza-evidence/blob/main/validation/2026-07-12c/VALIDATION_RECORD.md">2026-07-12c</a></td>
 </tr>
 <tr>
   <td class="rule-id">PROMPT_CONTAINS_DETERMINISTIC_FORMULA</td>
   <td class="num">6</td><td class="num">0</td><td class="num">0</td>
   <td><span class="mix" role="img" aria-label="6 true positives, 0 false positives, 0 false negatives"><i class="m-tp" style="flex:6"></i><i class="m-fp" style="flex:0"></i><i class="m-fn" style="flex:0"></i></span></td>
   <td class="num"><span class="val">1.000</span></td><td class="num">1.000</td><td class="num">6</td>
-  <td class="rec"><a href="https://github.com/reoxb/lumen-evidence/blob/main/validation/2026-07-14u/VALIDATION_RECORD.md">2026-07-14u</a></td>
+  <td class="rec"><a href="https://github.com/reoxb/probanza-evidence/blob/main/validation/2026-07-14u/VALIDATION_RECORD.md">2026-07-14u</a></td>
 </tr>
 <tr>
   <td class="rule-id">PROMPT_INJECTION_CROSSFILE_BLENDING</td>
@@ -355,14 +355,14 @@ pre code{background:none;padding:0;font-size:12.5px;line-height:1.75;}
   <td class="num">32</td><td class="num">2</td><td class="num">0</td>
   <td><span class="mix" role="img" aria-label="32 true positives, 2 false positives, 0 false negatives"><i class="m-tp" style="flex:32"></i><i class="m-fp" style="flex:2"></i><i class="m-fn" style="flex:0"></i></span></td>
   <td class="num"><span class="val">0.941</span></td><td class="num">1.000</td><td class="num">34</td>
-  <td class="rec"><a href="https://github.com/reoxb/lumen-evidence/blob/main/validation/2026-07-14u/VALIDATION_RECORD.md">2026-07-14u</a></td>
+  <td class="rec"><a href="https://github.com/reoxb/probanza-evidence/blob/main/validation/2026-07-14u/VALIDATION_RECORD.md">2026-07-14u</a></td>
 </tr>
 <tr>
   <td class="rule-id">SHELL_EXECUTION</td>
   <td class="num">1</td><td class="num">0</td><td class="num">0</td>
   <td><span class="mix" role="img" aria-label="1 true positives, 0 false positives, 0 false negatives"><i class="m-tp" style="flex:1"></i><i class="m-fp" style="flex:0"></i><i class="m-fn" style="flex:0"></i></span></td>
   <td class="num"><span class="val">1.000</span></td><td class="num">1.000</td><td class="num">1</td>
-  <td class="rec"><a href="https://github.com/reoxb/lumen-evidence/blob/main/validation/2026-07-12c/VALIDATION_RECORD.md">2026-07-12c</a></td>
+  <td class="rec"><a href="https://github.com/reoxb/probanza-evidence/blob/main/validation/2026-07-12c/VALIDATION_RECORD.md">2026-07-12c</a></td>
 </tr>
 <tr>
   <td class="rule-id">SHELL_EXECUTION</td>
@@ -425,7 +425,7 @@ pre code{background:none;padding:0;font-size:12.5px;line-height:1.75;}
   <td class="num">11</td><td class="num">10</td><td class="num">0</td>
   <td><span class="mix" role="img" aria-label="11 true positives, 10 false positives, 0 false negatives"><i class="m-tp" style="flex:11"></i><i class="m-fp" style="flex:10"></i><i class="m-fn" style="flex:0"></i></span></td>
   <td class="num"><span class="was">0.524</span><span class="arrow">→</span><span class="val">1.000</span></td><td class="num">1.000</td><td class="num">21</td>
-  <td class="rec"><a href="https://github.com/reoxb/lumen-evidence/blob/main/validation/2026-07-12c/VALIDATION_RECORD.md">2026-07-12c</a></td>
+  <td class="rec"><a href="https://github.com/reoxb/probanza-evidence/blob/main/validation/2026-07-12c/VALIDATION_RECORD.md">2026-07-12c</a></td>
 </tr>
 </tbody></table></div>
   <p class="mix-key">
@@ -592,7 +592,7 @@ pre code{background:none;padding:0;font-size:12.5px;line-height:1.75;}
   <p>Rejected: it resurrected the false positive 12o had just closed, by laundering a weak signal through the gate that trusts genuine ingestion. The false negative stays registered instead.</p>
 </div>
 <div class="reject">
-  <a class="rec" href="https://github.com/reoxb/lumen-evidence/blob/main/validation/2026-07-12t/VALIDATION_RECORD.md">2026-07-12t</a>
+  <a class="rec" href="https://github.com/reoxb/probanza-evidence/blob/main/validation/2026-07-12t/VALIDATION_RECORD.md">2026-07-12t</a>
   <h4>Exonerating PostHog keys — silence the analytics-key credential findings</h4>
   <p>Rejected as the wrong axis. The DETECTION was right; the RISK CLASSIFICATION was wrong, and an exception list neither scales (Segment, Sentry, Amplitude, LogRocket, Bugsnag are the same shape) nor keeps traceability. Built a classification LAYER instead: the rule still detects every credential, and a taxonomy decides what kind it is. Detection moved by zero findings.</p>
 </div>
@@ -627,7 +627,7 @@ context_str = &quot;\n&quot;.join(&quot; &quot;.join(paragraph) for paragraph in
 inputs = f&quot;Context: {context_str}\n\nQuestion: {input_text}\n\nAnswer:&quot;</code></pre>
   <dl>
     <dt>What it is</dt><dd>Retrieved Wikipedia paragraphs — content the system did not write — are pasted straight into a prompt instruction with no boundary between them and the question. It is the same shape as the 24 sites the rule does catch.</dd>
-    <dt>Why LUMEN misses it</dt><dd>The rule fires on external content only when it can PROVE the content is external: a real fetch, a scrape, a retriever call, a document field, or a prompt that declares its own source. Here the text arrives from a dataset dictionary — `problem[&quot;context&quot;]` — and the file makes no external call at all. The provenance gate, which is the thing holding this rule's precision at 1.000, has nothing to grab.</dd>
+    <dt>Why Probanza misses it</dt><dd>The rule fires on external content only when it can PROVE the content is external: a real fetch, a scrape, a retriever call, a document field, or a prompt that declares its own source. Here the text arrives from a dataset dictionary — `problem[&quot;context&quot;]` — and the file makes no external call at all. The provenance gate, which is the thing holding this rule's precision at 1.000, has nothing to grab.</dd>
     <dt>Why it is still open</dt><dd>We built the fix and measured it. Treating a `[&quot;context&quot;]` subscript as ingestion closed this miss — and RESURRECTED the false positive that the previous arc had just paid to close, because it laundered a weak signal through the gate that trusts genuine ingestion. So the fix was rejected and the miss stays registered. It is not a limitation we suffer; it is a trade we chose, with the numbers in front of us: one known miss beats one unknown false alarm.</dd>
   </dl>
 </div>
@@ -672,10 +672,10 @@ inputs = f&quot;Context: {context_str}\n\nQuestion: {input_text}\n\nAnswer:&quot
   </div>
   <div class="cta">
     <div>
-      <p class="cta-h">Evaluating LUMEN?</p>
+      <p class="cta-h">Evaluating Probanza?</p>
       <p class="cta-b">Request the evaluator bundle — say who you are and what you are evaluating.</p>
     </div>
-    <a class="cta-a" href="https://github.com/reoxb/lumen-evidence/issues">Request access →</a>
+    <a class="cta-a" href="https://github.com/reoxb/probanza-evidence/issues">Request access →</a>
   </div>
 </section>
 <section class="sec">
@@ -685,8 +685,8 @@ inputs = f&quot;Context: {context_str}\n\nQuestion: {input_text}\n\nAnswer:&quot
     <p><strong>The public tier's labeled data is in this repository.</strong> Every finding behind the public rows above — 1345 of them, each marked true positive, false positive or false negative by hand — is committed as CSV beside the dated record that produced it.</p>
     <p><strong>Recompute the numbers without taking our word for anything.</strong> A dependency-free script reads those CSVs and prints their table rows from scratch:</p>
   </div>
-  <pre><code>git clone https://github.com/reoxb/lumen-evidence
-cd lumen-evidence
+  <pre><code>git clone https://github.com/reoxb/probanza-evidence
+cd probanza-evidence
 python3 verify.py          # recomputes the public tier's precision and recall from the labels</code></pre>
   <div class="prose">
     <p>If its output disagrees with what you read above, the page is wrong and you should say so.</p>
@@ -696,7 +696,7 @@ python3 verify.py          # recomputes the public tier's precision and recall f
 
   <h3>The engine is the product. Its homework is licensed reading.</h3>
   <div class="prose">
-    <p>LUMEN's detection engine is commercial and its source is closed, so <strong>no, you cannot run it from this repository.</strong> That is the trade — stated in one sentence, rather than buried in a footnote.</p>
+    <p>Probanza's detection engine is commercial and its source is closed, so <strong>no, you cannot run it from this repository.</strong> That is the trade — stated in one sentence, rather than buried in a footnote.</p>
     <p>What we will not do is ask you to take the rest on faith. The commodity labels, the public records, the pinned corpus, the doctrines we measured and threw away, and the failures we cannot see are all here — and everything gated is one named request away, checkable by the same script.</p>
     <p><strong>A vendor confident in its product can afford to show its homework — and to say which pages of it are licensed reading.</strong> That is the argument of this page, and it is the only one we intend to make.</p>
   </div>
@@ -705,15 +705,16 @@ python3 verify.py          # recomputes the public tier's precision and recall f
       <p class="cta-h">Want to see what it finds in your codebase?</p>
       <p class="cta-b">Concierge audits are open — bring a repository. You get the findings and the evidence behind each one — including the ones we get wrong.</p>
     </div>
-    <a class="cta-a" href="mailto:suarzs@gmail.com?subject=LUMEN%20audit%20request">Get your repo audited →</a>
+    <a class="cta-a" href="mailto:contact@divergia.ai?subject=Probanza%20audit%20request">Get your repo audited →</a>
   </div>
 </section>
 <footer class="foot">
   <p>Dossier version <span class="mono">1.1.0</span> · 3823 hand-labeled findings across 20 products.</p>
   <p class="mono">Rendered by <code>npm run evidence</code> from the labeled data. It cannot disagree with the labels; the build would fail.</p>
-  <p>Reading this as an AI agent? Same facts, machine-readable: <a href="https://reoxb.github.io/lumen-evidence/agents.md">agents.md</a> · <a href="https://reoxb.github.io/lumen-evidence/llms.txt">llms.txt</a></p>
+  <p>Probanza is a product of <a href="https://divergia.ai">Divergia</a>.</p>
+  <p>Reading this as an AI agent? Same facts, machine-readable: <a href="https://probanza.divergia.ai/agents.md">agents.md</a> · <a href="https://probanza.divergia.ai/llms.txt">llms.txt</a></p>
 </footer>
 </div>
-<script data-goatcounter="https://lumen-evidence.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://probanza.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
