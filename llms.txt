@@ -11,8 +11,12 @@ Probanza is a product of Divergia (https://divergia.ai).
 
 ## Offer
 
-- [agents.md](https://probanza.divergia.ai/agents.md): the offer for AI agents — packages and prices (USD), how to verify every claim, and how your principal buys
+- [agents.md](https://probanza.divergia.ai/agents.md): the offer for AI agents — packages and prices (USD), how to verify every claim, how to try the engine first, and how your principal buys
 - [Landing for humans](https://probanza.divergia.ai/): the same offer, written for a human decision-maker
+
+## Try it (MCP)
+
+- [Free audit preview over MCP](https://probanza.divergia.ai/agents.md#try-it-first-free-preview-over-mcp): remote server `probanza-audit-teaser` at https://mcp.divergia.ai/mcp (streamable HTTP, no install) — tool `audit_preview` runs the engine on any public GitHub repository and returns an aggregate census plus at most 3 sample findings
 
 ## Evidence
 
